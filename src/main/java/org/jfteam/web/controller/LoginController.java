@@ -1,6 +1,10 @@
 package org.jfteam.web.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +18,14 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 public class LoginController {
 
-    @PostMapping(value = "login")
-    public void login(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+    private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
+
+    @RequestMapping(value = "login", method = {RequestMethod.GET, RequestMethod.POST})
+    public void login(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
+        final String userName = httpServletRequest.getParameter("userName");
+        final String password = httpServletRequest.getParameter("password");
+        LOGGER.info("userName: {}", userName);
+        LOGGER.info("password: {}", password);
+        httpServletResponse.getWriter().write("userName:" + userName);
     }
 }

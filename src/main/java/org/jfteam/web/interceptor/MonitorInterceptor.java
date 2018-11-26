@@ -5,6 +5,7 @@ import org.jfteam.framework.util.LogUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author: Administrator
  * @date: 2018/11/24 15:21
  */
+@Component("monitorInterceptor")
 public class MonitorInterceptor implements HandlerInterceptor {
     private static final Logger LOGGER = LoggerFactory.getLogger(MonitorInterceptor.class);
 
