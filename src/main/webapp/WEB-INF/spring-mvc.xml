@@ -12,31 +12,43 @@
 
     <mvc:annotation-driven content-negotiation-manager="contentNegotiationManagerFactoryBean">
         <mvc:message-converters>
-            <ref bean="messageConverters"/>
+            <ref bean="mappingJackson2HttpMessageConverter"/>
+            <ref bean="stringHttpMessageConverter"/>
+            <ref bean="byteArrayHttpMessageConverter"/>
+            <ref bean="resourceHttpMessageConverter"/>
+            <ref bean="sourceHttpMessageConverter"/>
+            <ref bean="jaxb2RootElementHttpMessageConverter"/>
         </mvc:message-converters>
     </mvc:annotation-driven>
 
+    <bean id="mappingJackson2HttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <util:list>
+                <value>application/json;charset=UTF-8</value>
+                <value>text/html;charset=UTF-8</value>
+            </util:list>
+        </property>
+    </bean>
+    <bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <util:list>
+                <value>application/json;charset=UTF-8</value>
+                <value>text/html;charset=UTF-8</value>
+            </util:list>
+        </property>
+    </bean>
+    <bean id="byteArrayHttpMessageConverter" class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
+    <bean id="resourceHttpMessageConverter" class="org.springframework.http.converter.ResourceHttpMessageConverter"/>
+    <bean id="sourceHttpMessageConverter" class="org.springframework.http.converter.xml.SourceHttpMessageConverter"/>
+    <bean id="jaxb2RootElementHttpMessageConverter" class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter"/>
+
     <util:list id="messageConverters">
-        <bean id="mappingJackson2HttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-            <property name="supportedMediaTypes">
-                <util:list>
-                    <value>application/json;charset=UTF-8</value>
-                    <value>text/html;charset=UTF-8</value>
-                </util:list>
-            </property>
-        </bean>
-        <bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter">
-            <property name="supportedMediaTypes">
-                <util:list>
-                    <value>application/json;charset=UTF-8</value>
-                    <value>text/html;charset=UTF-8</value>
-                </util:list>
-            </property>
-        </bean>
-        <bean id="byteArrayHttpMessageConverter" class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
-        <bean id="resourceHttpMessageConverter" class="org.springframework.http.converter.ResourceHttpMessageConverter"/>
-        <bean id="sourceHttpMessageConverter" class="org.springframework.http.converter.xml.SourceHttpMessageConverter"/>
-        <bean id="jaxb2RootElementHttpMessageConverter" class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter"/>
+        <ref bean="mappingJackson2HttpMessageConverter"/>
+        <ref bean="stringHttpMessageConverter"/>
+        <ref bean="byteArrayHttpMessageConverter"/>
+        <ref bean="resourceHttpMessageConverter"/>
+        <ref bean="sourceHttpMessageConverter"/>
+        <ref bean="jaxb2RootElementHttpMessageConverter"/>
     </util:list>
 
     <!--根据请求的后缀,进入不同的请求-->
@@ -63,4 +75,12 @@
             <ref bean="securityInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
+
+    <!--支持上传文件-->
+    <!--<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>-->
+
+    <!--客户端工具-->
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+        <property name="messageConverters" ref="messageConverters"/>
+    </bean>
 </beans>
