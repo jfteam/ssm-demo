@@ -64,7 +64,7 @@
             <AppenderRef ref="appErrorFile"/>
             <AppenderRef ref="Console"/>
         </Logger>
-        <Root level="DEBUG">
+        <Root level="INFO">
             <AppenderRef ref="Console"/>
         </Root>
     </Loggers>
