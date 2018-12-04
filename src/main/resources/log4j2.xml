@@ -6,10 +6,9 @@
 
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [traceId: %X{traceId}] [%t] %-5level %logger{36} -%msg%n"/>
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [traceId: %X{traceId}] [%-5level] [%t] %c{1} -%msg%n"/>
         </Console>
-        <RollingFile name="appInfoFile" fileName="${LOG_HOME}/app-info.log"
-                     filePattern="${LOG_HOME}/app-info-%d{yyyyMMddHH}-%i.log.gz" ignoreExceptions="false">
+        <RollingFile name="appInfoFile" fileName="${LOG_HOME}/app-info.log" filePattern="${LOG_HOME}/app-info-%d{yyyyMMddHH}-%i.log.gz" ignoreExceptions="false">
             <PatternLayout>
                 <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
             </PatternLayout>
@@ -33,8 +32,7 @@
                 </Delete>
             </DefaultRolloverStrategy>
         </RollingFile>
-        <RollingFile name="appErrorFile" fileName="${LOG_HOME}/app-error.log"
-                     filePattern="${LOG_HOME}/app-error-%d{yyyyMMddHH}-%i.log.gz" ignoreExceptions="false">
+        <RollingFile name="appErrorFile" fileName="${LOG_HOME}/app-error.log" filePattern="${LOG_HOME}/app-error-%d{yyyyMMddHH}-%i.log.gz" ignoreExceptions="false">
             <PatternLayout>
                 <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
             </PatternLayout>
@@ -66,7 +64,7 @@
             <AppenderRef ref="appErrorFile"/>
             <AppenderRef ref="Console"/>
         </Logger>
-        <Root level="INFO">
+        <Root level="DEBUG">
             <AppenderRef ref="Console"/>
         </Root>
     </Loggers>
