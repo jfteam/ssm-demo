@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <!--dubbo应用的基础配置-->
+    <dubbo:application name="${app.name}" organization="${app.organization}" owner="${app.owner}" version="${app.version}" environment="${app.env}"/>
+
+    <!-- 使用zookeeper注册中心暴露服务地址 -->
+    <dubbo:registry protocol="${registry.protocol}" address="${registry.address}" timeout="${registry.timeout}"/>
+
+    <!-- 用${dubbo.transport.protocol}协议在${dubbo.transport.port}端口暴露服务 -->
+    <dubbo:protocol name="${dubbo.transport.protocol}" port="${dubbo.transport.port}"/>
+</beans>
