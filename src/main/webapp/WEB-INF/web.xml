@@ -15,7 +15,7 @@
 
     <!--Spring Web项目初始化-->
     <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+        <listener-class>org.jfteam.framework.context.AppContextLoaderListener</listener-class>
     </listener>
     <!--防止内存溢出-->
     <listener>
@@ -45,7 +45,7 @@
 
     <servlet>
         <servlet-name>dispatcherServlet</servlet-name>
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <servlet-class>org.jfteam.framework.context.AppDispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>/WEB-INF/spring-mvc.xml</param-value>

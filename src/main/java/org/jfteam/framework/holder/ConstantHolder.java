@@ -6,4 +6,8 @@ public final class ConstantHolder {
         public static final String LOG_TRACE_RESPONSE_HEADER = "RequestId";
     }
 
+    public static class SystemConstants {
+        public static final String DEFAULT_CHARSET = "UTF-8";
+    }
+
 }
