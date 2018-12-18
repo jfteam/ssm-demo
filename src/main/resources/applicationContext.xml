@@ -12,4 +12,7 @@
     <import resource="classpath:config/spring-jdbc.xml"/>
     <import resource="classpath:config/spring-mybatis.xml"/>
     <import resource="classpath:config/spring-task.xml"/>
+
+    <import resource="classpath:config/dubbo-config.xml"/>
+    <import resource="classpath:config/dubbo-consumer.xml"/>
 </beans>

@@ -5,11 +5,10 @@
        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <!--dubbo应用的基础配置-->
     <dubbo:application
-            name="${app.name}"
-            organization="${app.organization}"
-            owner="${app.owner}"
-            version="${app.version}"
-            environment="${app.env}"/>
+            name="${application.name}"
+            organization="${application.organization}"
+            owner="${application.owner}"
+            version="${application.version}"/>
 
     <!-- 使用zookeeper注册中心暴露服务地址 -->
     <dubbo:registry

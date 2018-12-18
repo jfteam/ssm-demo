@@ -6,16 +6,28 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <beans profile="dev">
-        <context:property-placeholder location="classpath:properties/application.properties,classpath:properties/application-dev.properties" file-encoding="UTF-8"/>
+        <context:property-placeholder
+                location="classpath:properties/application.properties,classpath:properties/application-dev.properties"
+                local-override="true"
+                file-encoding="UTF-8"/>
     </beans>
     <beans profile="sit">
-        <context:property-placeholder location="classpath:properties/application.properties,classpath:properties/application-sit.properties" file-encoding="UTF-8"/>
+        <context:property-placeholder
+                location="classpath:properties/application.properties,classpath:properties/application-sit.properties"
+                local-override="true"
+                file-encoding="UTF-8"/>
     </beans>
     <beans profile="uat">
-        <context:property-placeholder location="classpath:properties/application.properties,classpath:properties/application-uat.properties" file-encoding="UTF-8"/>
+        <context:property-placeholder
+                location="classpath:properties/application.properties,classpath:properties/application-uat.properties"
+                local-override="true"
+                file-encoding="UTF-8"/>
     </beans>
     <beans profile="production">
-        <context:property-placeholder location="classpath:properties/application.properties,classpath:properties/application-production.properties" file-encoding="UTF-8"/>
+        <context:property-placeholder
+                location="classpath:properties/application.properties,classpath:properties/application-production.properties"
+                local-override="true"
+                file-encoding="UTF-8"/>
     </beans>
 </beans>
 
