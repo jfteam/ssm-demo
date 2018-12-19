@@ -1,5 +1,6 @@
 package org.jfteam.framework.exception;
 
+import org.jfteam.framework.holder.ConstantHolder;
 import org.jfteam.framework.web.HttpStatusProvider;
 import org.springframework.http.HttpStatus;
 
@@ -10,9 +11,8 @@ import org.springframework.http.HttpStatus;
  */
 public class AuthenticationException extends SecurityException implements HttpStatusProvider {
 
-
-    public AuthenticationException(String errorCode) {
-        super(errorCode);
+    public AuthenticationException() {
+        super(ConstantHolder.ResponseResultCodes.AUTHENTICATION);
     }
 
     @Override

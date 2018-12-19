@@ -77,7 +77,13 @@
     </mvc:interceptors>
 
     <!--支持上传文件-->
-    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+    <bean id="commonsMultipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+
+    <!--统一异常解析器-->
+    <bean id="globalHandlerExceptionResolver" class="org.jfteam.framework.web.GlobalHandlerExceptionResolver"/>
+
+    <!--统一返回值注册器-->
+    <bean id="globalReturnValueHandlerRegister" class="org.jfteam.framework.web.GlobalReturnValueHandlerRegister"/>
 
     <!--客户端工具-->
     <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">

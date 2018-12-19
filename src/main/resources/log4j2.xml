@@ -64,6 +64,9 @@
             <AppenderRef ref="appErrorFile"/>
             <AppenderRef ref="Console"/>
         </Logger>
+        <Logger name="org.jfteam.framework.web" level="DEBUG" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
         <Root level="INFO">
             <AppenderRef ref="Console"/>
         </Root>

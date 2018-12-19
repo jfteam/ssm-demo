@@ -1,17 +1,19 @@
 package org.jfteam.framework.exception;
 
-import org.jfteam.framework.util.LogUtils;
-
 /**
  * @description: 描述
  * @author: fengwenping
  * @date: 2018/12/5 21:15
  */
-public class ApplicationException extends Exception {
+public abstract class ApplicationException extends Exception {
 
     private Object[] args;
     private String errorCode;
     private Throwable throwable;
+
+    public ApplicationException() {
+        super();
+    }
 
     public ApplicationException(String errorCode) {
         this.errorCode = errorCode;
@@ -34,6 +36,10 @@ public class ApplicationException extends Exception {
 
     @Override
     public String getMessage() {
-        return LogUtils.getExceptionMessage(this.throwable);
+        return this.errorCode;
+    }
+
+    public Object[] getArgs() {
+        return args;
     }
 }

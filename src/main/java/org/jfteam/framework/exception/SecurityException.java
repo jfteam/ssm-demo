@@ -5,14 +5,9 @@ package org.jfteam.framework.exception;
  * @author: fengwenping
  * @date: 2018-12-15 18:31
  */
-public class SecurityException extends SystemException {
+public abstract class SecurityException extends SystemException {
 
     public SecurityException(String errorCode) {
         super(errorCode);
-    }
-
-    public SecurityException() {
-        super();
-
     }
 }
