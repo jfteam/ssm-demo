@@ -3,6 +3,7 @@ package org.jfteam.framework.exception;
 import org.jfteam.framework.holder.AppContextHolder;
 import org.jfteam.framework.holder.ConstantHolder;
 import org.jfteam.framework.holder.PropertyHolderConfigurer;
+import org.springframework.util.StringUtils;
 
 import java.text.MessageFormat;
 
@@ -49,12 +50,23 @@ public final class ExceptionMessageManager {
      * @param throwable
      * @return
      */
-    public static String getExceptionMessage(Throwable throwable) {
+    public static String getMessage(Throwable throwable) {
         StringBuffer stringBuffer = new StringBuffer();
         StackTraceElement[] trace = throwable.getStackTrace();
         for (StackTraceElement s : trace) {
             stringBuffer.append("\tat ").append(s).append("\r\n");
         }
         return stringBuffer.toString();
+    }
+
+    public static String getMessage(String errorCode, Throwable throwable, Object... args) {
+        String message = ExceptionMessageManager.getMessage(errorCode, args);
+        if (!StringUtils.hasText(message)) {
+            message = ExceptionMessageManager.getMessage(throwable);
+        }
+        if (!StringUtils.hasText(message)) {
+            message = errorCode;
+        }
+        return message;
     }
 }

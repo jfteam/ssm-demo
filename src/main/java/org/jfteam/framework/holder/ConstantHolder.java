@@ -21,7 +21,6 @@ public final class ConstantHolder {
         public static final String AUTHORIZATION = "403000";
         //资源未找到
         public static final String NOT_FOUND = "40400";
-
     }
 
 }

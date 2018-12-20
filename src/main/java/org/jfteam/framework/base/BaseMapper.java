@@ -9,13 +9,21 @@ import java.io.Serializable;
  * @author: fengwenping
  * @date: 2018/12/11 12:13
  */
-public interface BaseDao<T, ID extends Serializable> {
+public interface BaseMapper<T, ID extends Serializable> {
+    /**
+     * 插入实体
+     *
+     * @param entity
+     * @param <S>
+     * @return
+     */
+    <S extends T> int insert(S entity);
 
-    <S extends T> S save(S entity);
-
-    <S extends T> Iterable<S> save(Iterable<S> entities);
+    <S extends T> int insert(Iterable<S> entities);
 
     T findOne(ID id);
+
+    <S extends T> S findOne(S entity);
 
     boolean exists(ID id);
 

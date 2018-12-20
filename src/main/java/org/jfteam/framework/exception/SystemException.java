@@ -37,10 +37,10 @@ public abstract class SystemException extends RuntimeException {
 
     @Override
     public String getMessage() {
-        return this.errorCode;
+        return ExceptionMessageManager.getMessage(errorCode, throwable, args);
     }
 
-    public Object[] getArgs() {
-        return args;
+    public String getErrorCode() {
+        return errorCode;
     }
 }

@@ -1,9 +1,11 @@
 package org.jfteam.service.impl;
 
+import org.jfteam.dao.UserMapper;
 import org.jfteam.service.UserService;
 import org.jfteam.vo.UserVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,8 +18,16 @@ public class UserServiceImpl implements UserService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
 
+    @Autowired
+    private UserMapper userMapper;
+
     @Override
     public void add(UserVO userVO) throws Exception {
+        userMapper.insert(userVO);
+    }
 
+    @Override
+    public UserVO findOne(Integer id) throws Exception {
+        return userMapper.findOne(id);
     }
 }

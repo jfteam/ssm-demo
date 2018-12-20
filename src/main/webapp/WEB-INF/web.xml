@@ -38,8 +38,18 @@
         </init-param>
     </filter>
 
+    <filter>
+        <filter-name>userContextFilter</filter-name>
+        <filter-class>org.jfteam.web.filter.UserContextFilter</filter-class>
+    </filter>
+
     <filter-mapping>
         <filter-name>characterEncodingFilter</filter-name>
+        <url-pattern>*</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>userContextFilter</filter-name>
         <url-pattern>*</url-pattern>
     </filter-mapping>
 

@@ -36,10 +36,10 @@ public abstract class ApplicationException extends Exception {
 
     @Override
     public String getMessage() {
-        return this.errorCode;
+        return ExceptionMessageManager.getMessage(this.errorCode, this.throwable, this.args);
     }
 
-    public Object[] getArgs() {
-        return args;
+    public String getErrorCode() {
+        return errorCode;
     }
 }

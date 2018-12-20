@@ -59,6 +59,14 @@
     </Appenders>
 
     <Loggers>
+        <!--log4jdbc start-->
+        <Logger name="jdbc.sqlonly" level="error"></Logger>
+        <Logger name="jdbc.audit" level="error"></Logger>
+        <Logger name="jdbc.resultset" level="error"></Logger>
+        <Logger name="jdbc.resultsettable" level="error"></Logger>
+        <Logger name="jdbc.connection" level="error"></Logger>
+        <Logger name="jdbc.sqltiming" level="info"></Logger>
+        <!--log4jdbc end-->
         <Logger name="org.jfteam" level="INFO" additivity="false">
             <AppenderRef ref="appInfoFile"/>
             <AppenderRef ref="appErrorFile"/>

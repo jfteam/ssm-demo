@@ -32,14 +32,16 @@ public class GlobalHandlerExceptionResolver implements HandlerExceptionResolver 
         String errorCode;
         String errorMessage;
         if (exp instanceof ApplicationException) {
-            errorCode = exp.getMessage();
-            errorMessage = ExceptionMessageManager.getMessage(errorCode, ((ApplicationException) exp).getArgs());
+            final ApplicationException applicationException = (ApplicationException) exp;
+            errorCode = applicationException.getErrorCode();
+            errorMessage = applicationException.getMessage();
         } else if (exp instanceof SystemException) {
-            errorCode = exp.getMessage();
-            errorMessage = ExceptionMessageManager.getMessage(errorCode, ((SystemException) exp).getArgs());
+            final SystemException systemException = (SystemException) exp;
+            errorCode = systemException.getErrorCode();
+            errorMessage = systemException.getMessage();
         } else {
             errorCode = ConstantHolder.ResponseResultCodes.FAILURE;
-            errorMessage = ExceptionMessageManager.getExceptionMessage(exp);
+            errorMessage = ExceptionMessageManager.getMessage(exp);
         }
         if (!StringUtils.hasText(errorMessage)) {
             errorMessage = ExceptionMessageManager.getFailureMessage();

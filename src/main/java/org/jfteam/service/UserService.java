@@ -1,7 +1,6 @@
 package org.jfteam.service;
 
 import org.jfteam.vo.UserVO;
-import org.springframework.http.ResponseEntity;
 
 /**
  * @description: 描述
@@ -11,4 +10,6 @@ import org.springframework.http.ResponseEntity;
 public interface UserService {
 
     void add(UserVO userVO) throws Exception;
+
+    UserVO findOne(Integer id) throws Exception;
 }
