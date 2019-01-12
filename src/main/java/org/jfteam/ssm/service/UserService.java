@@ -1,6 +1,6 @@
-package org.jfteam.service;
+package org.jfteam.ssm.service;
 
-import org.jfteam.vo.UserVO;
+import org.jfteam.ssm.vo.UserVO;
 
 /**
  * @description: 描述

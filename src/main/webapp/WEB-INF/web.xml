@@ -40,7 +40,11 @@
 
     <filter>
         <filter-name>userContextFilter</filter-name>
-        <filter-class>org.jfteam.web.filter.UserContextFilter</filter-class>
+        <filter-class>org.jfteam.ssm.web.filter.UserContextFilter</filter-class>
+        <init-param>
+            <param-name></param-name>
+            <param-value></param-value>
+        </init-param>
     </filter>
 
     <filter-mapping>

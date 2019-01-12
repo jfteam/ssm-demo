@@ -1,4 +1,4 @@
-package org.jfteam.web.controller;
+package org.jfteam.ssm.web.controller;
 
 import org.jfteam.framework.exception.AuthenticationException;
 import org.slf4j.Logger;

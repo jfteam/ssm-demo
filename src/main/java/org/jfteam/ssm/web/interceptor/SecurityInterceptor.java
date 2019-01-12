@@ -1,4 +1,4 @@
-package org.jfteam.web.interceptor;
+package org.jfteam.ssm.web.interceptor;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;

@@ -1,12 +1,11 @@
 package org.jfteam.service;
 
 import org.jfteam.BaseTest;
-import org.jfteam.vo.UserVO;
+import org.jfteam.ssm.service.UserService;
+import org.jfteam.ssm.vo.UserVO;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import static org.junit.Assert.*;
 
 /**
  * @description: 描述

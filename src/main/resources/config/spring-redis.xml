@@ -12,6 +12,6 @@
 
     <bean id="stringRedisSerializer" class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
     <bean id="jackson2JsonRedisSerializer" class="org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer">
-        <constructor-arg index="0" value="org.jfteam.vo.UserVO"/>
+        <constructor-arg index="0" value="org.jfteam.ssm.vo.UserVO"/>
     </bean>
 </beans>

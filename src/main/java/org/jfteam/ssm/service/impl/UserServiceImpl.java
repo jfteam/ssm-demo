@@ -1,8 +1,8 @@
-package org.jfteam.service.impl;
+package org.jfteam.ssm.service.impl;
 
-import org.jfteam.dao.UserMapper;
-import org.jfteam.service.UserService;
-import org.jfteam.vo.UserVO;
+import org.jfteam.ssm.dao.UserMapper;
+import org.jfteam.ssm.service.UserService;
+import org.jfteam.ssm.vo.UserVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

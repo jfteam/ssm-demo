@@ -1,4 +1,4 @@
-package org.jfteam.web.interceptor;
+package org.jfteam.ssm.web.interceptor;
 
 import org.jfteam.framework.holder.ConstantHolder;
 import org.jfteam.framework.util.LogUtils;

@@ -1,4 +1,4 @@
-package org.jfteam.vo;
+package org.jfteam.ssm.vo;
 
 import org.jfteam.framework.base.BaseVO;
 

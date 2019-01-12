@@ -1,9 +1,9 @@
-package org.jfteam.service.impl;
+package org.jfteam.ssm.service.impl;
 
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
 import org.jfteam.framework.mq.RocketMQMessage;
 import org.jfteam.framework.mq.RocketMQMessageListener;
-import org.jfteam.vo.UserVO;
+import org.jfteam.ssm.vo.UserVO;
 import org.springframework.stereotype.Component;
 
 /**

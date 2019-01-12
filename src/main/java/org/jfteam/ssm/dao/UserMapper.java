@@ -1,7 +1,7 @@
-package org.jfteam.dao;
+package org.jfteam.ssm.dao;
 
 import org.apache.ibatis.annotations.Param;
-import org.jfteam.vo.UserVO;
+import org.jfteam.ssm.vo.UserVO;
 
 public interface UserMapper {
 
