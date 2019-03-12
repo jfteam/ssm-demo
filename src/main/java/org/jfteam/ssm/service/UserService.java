@@ -12,4 +12,6 @@ public interface UserService {
     void add(UserVO userVO) throws Exception;
 
     UserVO findOne(Integer id) throws Exception;
+
+    void sendMail(String mailTo, String subject, String content) throws Exception;
 }
