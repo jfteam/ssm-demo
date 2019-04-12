@@ -35,7 +35,7 @@ public class UserServiceTest extends BaseTest {
 
     @Test
     public void sendMail() throws Exception {
-        String mailTo = "244160190@qq.com";
+        String[] mailTo = new String[]{"244160190@qq.com", "459843511@qq.com"};
         String subject = "【笔试邀约】平安科技在线笔试邀请函";
         String content = "<table width=\"780px\" style=\"font-size: 12px; font-family: 'Microsoft YaHei'\">\n" +
                 "    <tbody>\n" +

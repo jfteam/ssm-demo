@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void sendMail(String mailTo, String subject, String content) throws Exception {
+    public void sendMail(String[] mailTo, String subject, String content) throws Exception {
         MimeMessage message = javaMailSender.createMimeMessage();
         try {
             //true表示需要创建一个multipart message
