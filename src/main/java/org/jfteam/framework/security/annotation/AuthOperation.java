@@ -25,4 +25,11 @@ public @interface AuthOperation {
      * @return
      */
     String desc();
+
+    /**
+     * 权限校验规则
+     *
+     * @return
+     */
+    SecurityPolicy policy();
 }
