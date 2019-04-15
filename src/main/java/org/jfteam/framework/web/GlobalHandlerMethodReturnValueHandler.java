@@ -36,9 +36,7 @@ public class GlobalHandlerMethodReturnValueHandler implements HandlerMethodRetur
 
     @Override
     public void handleReturnValue(Object returnValue, MethodParameter returnType, ModelAndViewContainer mavContainer, NativeWebRequest webRequest) {
-        if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("return value class: {}", returnValue.getClass().getName());
-        }
+        LOGGER.debug("return value class: {}", returnValue.getClass().getName());
         //不再跳转到下一个方法返回值处理器
         mavContainer.setRequestHandled(false);
         ResponseResult responseResult;
@@ -53,9 +51,7 @@ public class GlobalHandlerMethodReturnValueHandler implements HandlerMethodRetur
                     .data(returnValue)
                     .build();
         }
-        if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("return value json: {}", JSONUtils.toJSONString(responseResult));
-        }
+        LOGGER.debug("return value json: {}", JSONUtils.toJSONString(responseResult));
         final HttpServletResponse httpServletResponse = webRequest.getNativeResponse(HttpServletResponse.class);
         final HttpServletRequest httpServletRequest = webRequest.getNativeRequest(HttpServletRequest.class);
         WebUtils.writeContent(httpServletRequest, httpServletResponse, responseResult);
