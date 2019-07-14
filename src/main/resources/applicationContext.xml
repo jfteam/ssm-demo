@@ -12,11 +12,12 @@
 
     <aop:aspectj-autoproxy proxy-target-class="true"/>
 
-    <import resource="classpath:config/spring-properties.xml"/>
+    <import resource="classpath:config/spring-property.xml"/>
     <import resource="classpath:config/spring-jdbc.xml"/>
     <import resource="classpath:config/spring-mybatis.xml"/>
-    <import resource="classpath:config/spring-mail.xml"/>
+    <import resource="classpath:config/spring-email.xml"/>
     <import resource="classpath:config/spring-task.xml"/>
+    <import resource="classpath:config/spring-httpclient.xml"/>
 
     <import resource="classpath:config/dubbo-config.xml"/>
     <import resource="classpath:config/dubbo-consumer.xml"/>

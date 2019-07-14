@@ -9,8 +9,8 @@ import org.springframework.util.StringUtils;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.Closeable;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 
 /**
@@ -74,10 +74,10 @@ public final class WebUtils {
         }
     }
 
-    private static void close(OutputStream outputStream) {
-        if (outputStream != null) {
+    private static void close(Closeable closeable) {
+        if (closeable != null) {
             try {
-                outputStream.close();
+                closeable.close();
             } catch (IOException e) {
                 LOGGER.error("close output stream failure.", e);
             }
