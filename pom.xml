@@ -18,7 +18,7 @@
 
         <spring.version>4.3.20.RELEASE</spring.version>
         <log4j.version>2.9.1</log4j.version>
-        <jackson.version>2.9.8</jackson.version>
+        <jackson.version>2.9.10.3</jackson.version>
         <aspectj.version>1.8.13</aspectj.version>
     </properties>
 
